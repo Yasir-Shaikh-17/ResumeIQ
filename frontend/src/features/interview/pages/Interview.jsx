@@ -207,35 +207,33 @@ const Interview = () => {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="right h-full w-1/4 flex flex-col gap-2">
-            <div className="match-score flex flex-col justify-center items-center gap-2 h-1/2 bg-red-500 p-6">
+          <div className="right h-full w-1/4 flex flex-col gap-2 overflow-y-auto scrollbar-thumb-[var(--secondary-text-color)]/80 scrollbar-thin">
+            <div className="match-score flex flex-col justify-center items-center gap-2 p-4">
               <h2 className="uppercase text-[var(--text-color)] font-semibold text-lg">
                 match score
               </h2>
 
-              <div
-                className="circle rounded-full flex flex-col justify-center items-center border-4 
-            border-[var(--text-color)] h-48 w-48"
-              >
+              <div className="circle rounded-full flex flex-col justify-center items-center border-4 
+              border-[var(--text-color)] h-48 w-48">
                 <h2 className="text-6xl text-[var(--text-color)]">
                   {report.matchScore}
                   <span className="text-3xl">%</span>
                 </h2>
               </div>
 
-              <p className="text-[var(--text-color)] text-lg font-semibold text-center h-1/4 w-full truncate flex items-center bg-pink-900">
+              <p className="text-[var(--text-color)] text-lg font-semibold text-center">
                 {report.matchPara}
               </p>
             </div>
 
             <div className="w-full border-2 border-[var(--border-color)]"></div>
 
-            <div className="skill-gaps h-[50%] p-2">
+            <div className="skill-gaps p-2">
               <h2 className="uppercase text-[var(--text-color)] font-semibold text-lg h-[10%] flex items-center">
                 Skill gaps{" "}
               </h2>
 
-              <ul className="h-[90%] overflow-y-auto scrollbar-thumb-[var(--secondary-text-color)]/80 scrollbar-thin">
+              <ul>
                 {report?.skillGap?.map((e) => {
                   return (
                     <li

@@ -105,7 +105,7 @@ const interviewReportSchema = z.object({
   matchPara: z
     .string()
     .describe(
-      "A line which tells if the candidate is strong or weak candidate for the following job role based on his matchScore please keep it punchy like you need much improvement or you need improvement or you are a strong candidate for this role keep it under 8 words max.",
+      "A line which tells if the candidate is strong or weak candidate for the following job role based on his matchScore please keep it punchy like you need much improvement or you need improvement or you are a strong candidate for this role keep line should contain max 8 words.",
     ),
 });
 
