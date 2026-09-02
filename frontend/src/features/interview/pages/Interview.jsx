@@ -168,7 +168,7 @@ const Interview = () => {
             </div>
 
             {/* GENERATE RESUME */}
-            <div className="w-full flex justify-center">
+            <div className="w-full flex flex-col gap-2 items-center justify-center">
               <button
                 onClick={() => {
                   handleGeneratingResume()
@@ -178,6 +178,9 @@ const Interview = () => {
                 <img src={stars} alt="stars" className="h-8" />
                 <p>{!generatingResume? "Generated resume": "Generating..."}</p>
               </button>
+
+              <p className="text-[var(--text-color)] text-center">Generate a resume tailored to this job role.</p>
+
             </div>
           </div>
 
@@ -437,17 +440,20 @@ const Interview = () => {
           </div>
 
           {/* GENERATE RESUME */}
-          <div className="w-full flex justify-center pb-4">
-            <button
-              onClick={() => {
+           <div className="w-full flex flex-col gap-2 items-center justify-center pb-4">
+              <button
+                onClick={() => {
                   handleGeneratingResume()
                 }}
-              className="text-[var(--background-color)] w-4/5 bg-[var(--primary-color)] p-3 rounded cursor-pointer active:scale-95 transition duration-200 font-semibold flex items-center justify-center gap-2"
-            >
-              <img src={stars} alt="stars" className="h-8" />
-              <p>{!generatingResume? "Generated resume": "Generating..."}</p>
-            </button>
-          </div>
+                className="text-[var(--background-color)] w-4/5 bg-[var(--primary-color)] p-3 rounded cursor-pointer active:scale-95 transition duration-200 font-semibold flex items-center justify-center gap-2"
+              >
+                <img src={stars} alt="stars" className="h-8" />
+                <p>{!generatingResume? "Generated resume": "Generating..."}</p>
+              </button>
+
+              <p className="text-[var(--text-color)] text-center">Generate a resume tailored to this job role.</p>
+
+            </div>
         </div>
 
         {/* CONTAINER */}
