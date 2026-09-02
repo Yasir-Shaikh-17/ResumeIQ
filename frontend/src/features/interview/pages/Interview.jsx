@@ -447,7 +447,7 @@ const Interview = () => {
               className="text-[var(--background-color)] w-4/5 bg-[var(--primary-color)] p-3 rounded cursor-pointer active:scale-95 transition duration-200 font-semibold flex items-center justify-center gap-2"
             >
               <img src={stars} alt="stars" className="h-8" />
-              <p>Generated resume</p>
+              <p>{!generatingResume? "Generated resume": "Generating..."}</p>
             </button>
           </div>
         </div>
