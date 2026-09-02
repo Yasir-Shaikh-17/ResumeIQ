@@ -208,14 +208,14 @@ const Interview = () => {
 
           {/* RIGHT SIDE */}
           <div className="right h-full w-1/4 flex flex-col gap-2">
-            <div className="match-score flex flex-col justify-center items-center gap-2 h-[50%] p-6">
+            <div className="match-score flex flex-col justify-center items-center gap-2 h-1/2 bg-red-500 p-6">
               <h2 className="uppercase text-[var(--text-color)] font-semibold text-lg">
                 match score
               </h2>
 
               <div
                 className="circle rounded-full flex flex-col justify-center items-center border-4 
-            border-[var(--text-color)] h-45 w-45"
+            border-[var(--text-color)] h-48 w-48"
               >
                 <h2 className="text-6xl text-[var(--text-color)]">
                   {report.matchScore}
@@ -223,7 +223,7 @@ const Interview = () => {
                 </h2>
               </div>
 
-              <p className="text-[var(--text-color)] text-lg font-semibold text-center">
+              <p className="text-[var(--text-color)] text-lg font-semibold text-center h-1/4 w-full truncate flex items-center bg-pink-900">
                 {report.matchPara}
               </p>
             </div>
@@ -390,14 +390,14 @@ const Interview = () => {
           </div>
 
           {/* MATCH SCORE AND  */}
-          <div className="match-score flex flex-col justify-center items-center gap-2 h-[50%] p-6">
+          <div className="match-score flex flex-col justify-center items-center gap-2 p-6">
             <h2 className="uppercase text-[var(--text-color)] font-semibold text-lg">
               match score
             </h2>
 
             <div
               className="circle rounded-full flex flex-col justify-center items-center border-4 
-            border-[var(--text-color)] h-45 w-45"
+            border-[var(--text-color)] h-48 w-48"
             >
               <h2 className="text-6xl text-[var(--text-color)]">
                 {report.matchScore}
@@ -410,7 +410,7 @@ const Interview = () => {
             </p>
           </div>
 
-          <div className="skill-gaps p-2">
+          <div className="skill-gaps p-2 ">
             <h2 className="uppercase text-[var(--text-color)] font-semibold text-lg h-[10%] flex items-center">
               Skill gaps{" "}
             </h2>
