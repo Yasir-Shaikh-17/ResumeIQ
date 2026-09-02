@@ -44,7 +44,11 @@ async function registerUserController(req, res) {
     { expiresIn: "1d" },
   );
 
-  res.cookie("token", token);
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  });
 
   res.status(201).json({
     message: "User registered successfully",
@@ -79,6 +83,8 @@ async function loginUserController(req, res) {
       message: "Invalid email or password",
     });
   }
+
+  console.log("JWT_SECRET exists:", !!process.env.JWT_SECRET);
 
   const token = jwt.sign(
     {
@@ -116,7 +122,11 @@ async function logoutUserController(req, res) {
     await blacklistTokenModel.create({ token });
   }
 
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  });
 
   res.status(200).json({
     message: "User logout successfully",
