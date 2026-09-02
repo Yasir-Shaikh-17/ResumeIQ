@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://resume-iq-nine-sigma.vercel.app"],
+    origin: ["http://localhost:5173", "https://resume-iq-nine-sigma.vercel.app", "https://resume-iq-5.vercel.app"],
     credentials: true,
   }),
 );
