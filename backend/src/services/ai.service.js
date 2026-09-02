@@ -102,8 +102,11 @@ const interviewReportSchema = z.object({
       "The title of the job for which the interview report is generated",
     ),
 
-  matchPara: z.string().describe("A line which tells if the candidate is strong or weak candidate for the following job role based on his matchScore please keep it punchy like you need much improvement or you need improvement or you are a strong candidate for this role keep it under 8 words max.")
-  
+  matchPara: z
+    .string()
+    .describe(
+      "A line which tells if the candidate is strong or weak candidate for the following job role based on his matchScore please keep it punchy like you need much improvement or you need improvement or you are a strong candidate for this role keep it under 8 words max.",
+    ),
 });
 
 async function generateInterviewReport({
@@ -129,16 +132,23 @@ async function generateInterviewReport({
 }
 
 async function generatePdfFromHtml(htmlContent) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
+
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: "networkidle0" });
 
-  const pdfBuffer = await page.pdf({ format: "A4", margin: { 
-    top: "12mm",
-    bottom: "12mm",
-    left: "8mm",
-    right: "8mm"
-   } });
+  const pdfBuffer = await page.pdf({
+    format: "A4",
+    margin: {
+      top: "12mm",
+      bottom: "12mm",
+      left: "8mm",
+      right: "8mm",
+    },
+  });
   await browser.close();
 
   return pdfBuffer;
