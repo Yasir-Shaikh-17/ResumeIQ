@@ -193,7 +193,7 @@ const InterviewHome = () => {
 
           {reports.length == 0 && (
             <div className="flex justify-between items-center">
-              <h2 className="text-[var(--text-color)] text-4xl">
+              <h2 className="text-[var(--text-color)] text-2xl sm:text-4xl">
                 No Reports to show
               </h2>
             </div>
